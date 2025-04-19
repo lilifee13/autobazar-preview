@@ -41,7 +41,16 @@ input, select {
   padding: 0.5rem;
   margin-top: 0.5rem;
 }
-button {
+button, .contact-btn {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+}
+button:hover, .contact-btn:hover {
+  background: #555;
 }
