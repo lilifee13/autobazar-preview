@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,46 +41,28 @@
           <p>€420 - Very Good Condition</p>
           <a href="mailto:seller@example.com" class="contact-btn">Contact Seller</a>
         </div>
-        <div class="card">
-          <img src="https://via.placeholder.com/150" alt="Wheels" />
-          <h3>18" Lightweight Wheels</h3>
-          <p>€600 - Like New</p>
-          <a href="mailto:seller@example.com" class="contact-btn">Contact Seller</a>
-        </div>
-        <div class="card">
-          <img src="https://via.placeholder.com/150" alt="Tools" />
-          <h3>Garage Tool Set</h3>
-          <p>€180 - Light Use</p>
-          <a href="mailto:seller@example.com" class="contact-btn">Contact Seller</a>
-        </div>
-        <div class="card">
-          <img src="https://via.placeholder.com/150" alt="Springs" />
-          <h3>Lowering Springs</h3>
-          <p>€150 - Great Shape</p>
-          <a href="mailto:seller@example.com" class="contact-btn">Contact Seller</a>
-        </div>
-        <div class="card">
-          <img src="https://via.placeholder.com/150" alt="Headlights" />
-          <h3>Projector Headlights</h3>
-          <p>€200 - Excellent</p>
-          <a href="mailto:seller@example.com" class="contact-btn">Contact Seller</a>
-        </div>
       </div>
     </section>
 
     <section class="form">
       <h2>Post a Part</h2>
-      <form id="listingForm">
-        <label>Price (€): <input type="number" id="priceInput" /></label><br />
+      <form id="listingForm" action="https://formspree.io/f/yourFormID" method="POST">
+        <label>Part Title: <input type="text" name="title" required /></label><br />
+        <label>Price (€): <input type="number" name="price" id="priceInput" required /></label><br />
         <label>
           Type:
-          <select id="saleType">
+          <select name="saleType">
             <option value="fixed">Fixed Price</option>
             <option value="auction">Auction</option>
           </select>
         </label><br />
         <label>Upload Image: <input type="file" /></label><br />
+        <label>Description:
+          <textarea name="description" id="descriptionBox" rows="4"></textarea>
+        </label><br />
+        <button type="button" onclick="generateDescription()">Auto Description</button><br />
         <p id="feeDisplay">Fee: —</p>
+        <button type="submit">Submit Listing</button>
       </form>
     </section>
   </div>
