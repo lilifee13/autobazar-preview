@@ -3,7 +3,15 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebas
 import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
+  apiKey: "AIzaSyBPY01TzAX6dg9CXtTcg0BGfHwRQxXFOWs",
+  authDomain: "bazar-238a0.firebaseapp.com",
+  databaseURL: "https://bazar-238a0-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "bazar-238a0",
+  storageBucket: "bazar-238a0.firebasestorage.app",
+  messagingSenderId: "214245165310",
+  appId: "1:214245165310:web:edf98e66d935fad1393daf",
+  measurementId: "G-3ZHW7C2Z47"
+};
   authDomain: "YOUR_PROJECT.firebaseapp.com",
   databaseURL: "https://YOUR_PROJECT.firebaseio.com",
   projectId: "YOUR_PROJECT",
