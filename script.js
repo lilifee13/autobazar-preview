@@ -22,3 +22,12 @@ function generateDescription() {
   const box = document.getElementById('descriptionBox');
   box.value = "High-quality used car part, well-maintained and perfect for your next build.";
 }
+
+
+function showThankYou(event) {
+  event.preventDefault();
+  const form = document.getElementById('listingForm');
+  const msg = document.getElementById('thankYouMsg');
+  msg.style.display = 'block';
+  setTimeout(() => { form.submit(); }, 500); // allow user to see confirmation
+}

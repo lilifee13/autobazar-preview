@@ -57,12 +57,12 @@
           </select>
         </label><br />
         <label>Upload Image: <input type="file" /></label><br />
-        <label>Description:
+        <label>Condition: <select name="condition" required><option value="">Select</option><option>New</option><option>Like New</option><option>Used</option><option>Needs Repair</option></select></label><br /><label>Location: <input type="text" name="location" required /></label><br /><label>Description:
           <textarea name="description" id="descriptionBox" rows="4"></textarea>
         </label><br />
         <button type="button" onclick="generateDescription()">Auto Description</button><br />
         <p id="feeDisplay">Fee: —</p>
-        <button type="submit">Submit Listing</button>
+        <button type="submit" onclick="showThankYou(event)">Submit Listing</button><p id="thankYouMsg" style="display:none; margin-top:1rem; color:green;">Thank you! Your listing has been submitted.</p>
       </form>
     </section>
   </div>
