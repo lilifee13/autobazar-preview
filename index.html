@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AutoBazar</title>
+  <title>AutoBazar Live</title>
   <link rel="stylesheet" href="style.css" />
+  <script type="module" src="script.js" defer></script>
 </head>
 <body>
   <div class="container">
@@ -14,58 +15,32 @@
       <button onclick="toggleMode()">Toggle Light/Dark Mode</button>
     </header>
 
-    <section class="categories">
-      <h2>Categories</h2>
-      <div class="tiles">
-        <div class="tile">Exhausts</div>
-        <div class="tile">Wheels</div>
-        <div class="tile">Suspension</div>
-        <div class="tile">Tools</div>
-        <div class="tile">Electronics</div>
-        <div class="tile">Misc</div>
-      </div>
+    <section class="form">
+      <h2>Post a Part</h2>
+      <form id="listingForm">
+        <label>Title: <input type="text" id="title" required /></label><br />
+        <label>Image URL: <input type="url" id="image" required /></label><br />
+        <label>Condition: 
+          <select id="condition" required>
+            <option value="">Select</option>
+            <option>New</option>
+            <option>Like New</option>
+            <option>Used</option>
+            <option>Needs Repair</option>
+          </select>
+        </label><br />
+        <label>Location: <input type="text" id="location" required /></label><br />
+        <label>Price (€): <input type="number" id="price" required /></label><br />
+        <p id="feeDisplay">Fee: —</p>
+        <button type="submit">Submit Listing</button>
+        <p id="thankYouMsg" style="display:none; color:green; margin-top:1rem;">Thank you! Your listing has been posted.</p>
+      </form>
     </section>
 
     <section class="listings">
-      <h2>Latest Listings</h2>
-      <div class="cards">
-        <div class="card">
-          <img src="https://via.placeholder.com/150" alt="Exhaust" />
-          <h3>Used Performance Exhaust</h3>
-          <p>€250 - Good Condition</p>
-          <a href="mailto:seller@example.com" class="contact-btn">Contact Seller</a>
-        </div>
-        <div class="card">
-          <img src="https://via.placeholder.com/150" alt="Coilovers" />
-          <h3>Coilover Suspension Kit</h3>
-          <p>€420 - Very Good Condition</p>
-          <a href="mailto:seller@example.com" class="contact-btn">Contact Seller</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="form">
-      <h2>Post a Part</h2>
-      <form id="listingForm" action="https://formspree.io/f/mjkynyoa" method="POST">
-        <label>Part Title: <input type="text" name="title" required /></label><br />
-        <label>Price (€): <input type="number" name="price" id="priceInput" required /></label><br />
-        <label>
-          Type:
-          <select name="saleType">
-            <option value="fixed">Fixed Price</option>
-            <option value="auction">Auction</option>
-          </select>
-        </label><br />
-        <label>Upload Image: <input type="file" /></label><br />
-        <label>Condition: <select name="condition" required><option value="">Select</option><option>New</option><option>Like New</option><option>Used</option><option>Needs Repair</option></select></label><br /><label>Location: <input type="text" name="location" required /></label><br /><label>Description:
-          <textarea name="description" id="descriptionBox" rows="4"></textarea>
-        </label><br />
-        <button type="button" onclick="generateDescription()">Auto Description</button><br />
-        <p id="feeDisplay">Fee: —</p>
-        <button type="submit" onclick="showThankYou(event)">Submit Listing</button><p id="thankYouMsg" style="display:none; margin-top:1rem; color:green;">Thank you! Your listing has been submitted.</p>
-      </form>
+      <h2>Live Listings</h2>
+      <div class="cards" id="listingContainer"></div>
     </section>
   </div>
-  <script src="script.js"></script>
 </body>
 </html>
