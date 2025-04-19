@@ -12,13 +12,6 @@ const firebaseConfig = {
   appId: "1:214245165310:web:edf98e66d935fad1393daf",
   measurementId: "G-3ZHW7C2Z47"
 };
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  databaseURL: "https://YOUR_PROJECT.firebaseio.com",
-  projectId: "YOUR_PROJECT",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
-};
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
