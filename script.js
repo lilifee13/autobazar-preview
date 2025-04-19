@@ -3,7 +3,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebas
 import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBPY01TzAX6dg9CXtTcg0BGfHwRQxXFOWs",
+  apiKey: "AIzaSyDmk8EWDN373aZXJ7DDYKJnH3ldATME2PU",
   authDomain: "bazar-238a0.firebaseapp.com",
   databaseURL: "https://bazar-238a0-default-rtdb.europe-west1.firebasedatabase.app",
   projectId: "bazar-238a0",
