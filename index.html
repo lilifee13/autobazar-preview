@@ -4,24 +4,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AutoBazar Preview</title>
+  <title>AutoBazar</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>Buy. Sell. Tune. Together.</h1>
-    <form id="listingForm">
-      <label>Price (€): <input type="number" id="priceInput" /></label><br />
-      <label>
-        Type:
-        <select id="saleType">
-          <option value="fixed">Fixed Price</option>
-          <option value="auction">Auction</option>
-        </select>
-      </label><br />
-      <p id="feeDisplay">Fee: —</p>
-    </form>
-    <button onclick="toggleMode()">Toggle Light/Dark Mode</button>
+    <header>
+      <h1>Buy. Sell. Tune. Together.</h1>
+      <p>Welcome to AutoBazar — the garage-powered marketplace for car lovers.</p>
+      <button onclick="toggleMode()">Toggle Light/Dark Mode</button>
+    </header>
+
+    <section class="categories">
+      <h2>Categories</h2>
+      <div class="tiles">
+        <div class="tile">Exhausts</div>
+        <div class="tile">Wheels</div>
+        <div class="tile">Suspension</div>
+        <div class="tile">Tools</div>
+        <div class="tile">Electronics</div>
+        <div class="tile">Misc</div>
+      </div>
+    </section>
+
+    <section class="listings">
+      <h2>Latest Listings</h2>
+      <div class="cards">
+        <div class="card">
+          <img src="https://via.placeholder.com/150" alt="Exhaust" />
+          <h3>Used Performance Exhaust</h3>
+          <p>€250 - Good Condition</p>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/150" alt="Coilovers" />
+          <h3>Coilover Suspension Kit</h3>
+          <p>€420 - Very Good Condition</p>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/150" alt="Wheels" />
+          <h3>18" Lightweight Wheels</h3>
+          <p>€600 - Like New</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="form">
+      <h2>Post a Part</h2>
+      <form id="listingForm">
+        <label>Price (€): <input type="number" id="priceInput" /></label><br />
+        <label>
+          Type:
+          <select id="saleType">
+            <option value="fixed">Fixed Price</option>
+            <option value="auction">Auction</option>
+          </select>
+        </label><br />
+        <p id="feeDisplay">Fee: —</p>
+      </form>
+    </section>
   </div>
   <script src="script.js"></script>
 </body>

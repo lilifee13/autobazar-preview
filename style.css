@@ -12,10 +12,36 @@ body.dark {
   color: #eee;
 }
 .container {
-  max-width: 600px;
+  max-width: 900px;
   margin: auto;
+}
+header h1 {
+  margin-bottom: 0.5rem;
+}
+.categories .tiles, .listings .cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.tile, .card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  flex: 1 1 calc(33% - 2rem);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.tile:hover, .card:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.card img {
+  width: 100%;
+  border-radius: 4px;
 }
 input, select {
   padding: 0.5rem;
   margin-top: 0.5rem;
+}
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
 }
