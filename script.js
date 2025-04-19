@@ -54,7 +54,7 @@ onValue(listingsRef, (snapshot) => {
   });
 });
 
-function toggleMode() {
+window.toggleMode = function () {
   document.body.classList.toggle("dark");
 }
 
