@@ -47,10 +47,15 @@ onValue(listingsRef, (snapshot) => {
   container.innerHTML = "";
   snapshot.forEach((child) => {
     const item = child.val();
+    let displayImage = item.image;
+    if (displayImage.includes("via.placeholder.com")) {
+      displayImage = "https://source.unsplash.com/300x200/?car,parts";
+    }
+
     const card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `
-      <img src="${item.image}" alt="${item.title}" onerror="this.src='https://source.unsplash.com/300x200/?broken,image';" />
+      <img src="${displayImage}" alt="${item.title}" onerror="this.src='https://source.unsplash.com/300x200/?broken,image';" />
       <h3>${item.title}</h3>
       <p>€${item.price} - ${item.condition}</p>
       <p>${item.location} — <small>${item.time}</small></p>
