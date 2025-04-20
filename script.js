@@ -23,9 +23,14 @@ const container = document.getElementById("listingContainer");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  let imageUrl = document.getElementById("image").value.trim();
+  if (!imageUrl) {
+    imageUrl = "https://placehold.co/300x200?text=Part+Image";
+  }
+
   const data = {
     title: document.getElementById("title").value,
-    image: document.getElementById("image").value,
+    image: imageUrl,
     condition: document.getElementById("condition").value,
     location: document.getElementById("location").value,
     price: document.getElementById("price").value,
@@ -45,7 +50,7 @@ onValue(listingsRef, (snapshot) => {
     const card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `
-      <img src="${item.image}" alt="${item.title}" />
+      <img src="${item.image}" alt="${item.title}" onerror="this.src='https://placehold.co/300x200?text=Image+Not+Found';" />
       <h3>${item.title}</h3>
       <p>€${item.price} - ${item.condition}</p>
       <p>${item.location} — <small>${item.time}</small></p>
