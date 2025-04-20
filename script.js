@@ -27,7 +27,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   let imageUrl = document.getElementById("image").value.trim();
   if (!imageUrl) {
-    imageUrl = "https://source.unsplash.com/300x200/?car,engine,garage";
+    imageUrl = "https://source.unsplash.com/300x200/?car,engine";
   }
 
   const data = {
@@ -42,6 +42,7 @@ form.addEventListener("submit", (e) => {
     thankYou.style.display = "block";
     form.reset();
     document.getElementById("feeDisplay").textContent = "Fee: —";
+    setTimeout(() => { thankYou.style.display = "none"; }, 3000);
   });
 });
 
@@ -51,16 +52,17 @@ onValue(listingsRef, (snapshot) => {
     const item = child.val();
     const key = child.key;
 
-    if (item.image && item.image.includes("via.placeholder.com")) {
-      remove(ref(db, "listings/" + key)); // Delete broken listing
+    if (item.image.includes("via.placeholder.com")) {
+      remove(ref(db, "listings/" + key));
     } else {
-      let displayImage = item.image || "https://source.unsplash.com/300x200/?car,parts";
+      const badge = `<span class="badge ${item.condition}">${item.condition}</span>`;
       const card = document.createElement("div");
       card.className = "card";
       card.innerHTML = `
-        <img src="${displayImage}" alt="${item.title}" onerror="this.src='https://source.unsplash.com/300x200/?broken,image';" />
+        ${badge}
+        <img src="${item.image}" alt="${item.title}" onerror="this.src='https://source.unsplash.com/300x200/?car';" />
         <h3>${item.title}</h3>
-        <p>€${item.price} - ${item.condition}</p>
+        <p>€${item.price}</p>
         <p>${item.location} — <small>${item.time}</small></p>
       `;
       container.prepend(card);

@@ -3,25 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AutoBazar Live</title>
+  <title>AutoBazar v9.0</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Buy. Sell. Tune. Together.</h1>
-      <p>Welcome to AutoBazar — the garage-powered marketplace for car lovers.</p>
-      <button id="toggleButton">Toggle Light/Dark Mode</button>
-    </header>
+  <nav class="navbar">
+    <div class="logo">AutoBazar</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Post</a></li>
+      <li><a href="#">Categories</a></li>
+    </ul>
+    <button id="toggleButton">🌓</button>
+  </nav>
 
+  <div class="container">
     <section class="form">
       <h2>Post a Part</h2>
       <form id="listingForm">
         <label>Title: <input type="text" id="title" required /></label><br />
-        <label>Image URL: <input type="url" id="image" required /></label><br />
+        <label>Image URL: <input type="url" id="image" placeholder="https://..." /></label><br />
         <label>Condition: 
           <select id="condition" required>
-            <option value="">Select</option>
+            <option value="" disabled selected>Select Condition</option>
             <option>New</option>
             <option>Like New</option>
             <option>Used</option>
@@ -32,7 +36,7 @@
         <label>Price (€): <input type="number" id="price" required /></label><br />
         <p id="feeDisplay">Fee: —</p>
         <button type="submit">Submit Listing</button>
-        <p id="thankYouMsg" style="display:none; color:green; margin-top:1rem;">Thank you! Your listing has been posted.</p>
+        <p id="thankYouMsg" style="display:none; color:green; margin-top:1rem;">✅ Your listing has been posted!</p>
       </form>
     </section>
 
