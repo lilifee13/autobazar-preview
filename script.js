@@ -54,9 +54,9 @@ onValue(listingsRef, (snapshot) => {
   });
 });
 
-window.toggleMode = function () {
+document.getElementById("toggleButton").addEventListener("click", () => {
   document.body.classList.toggle("dark");
-}
+});
 
 const priceInput = document.getElementById('price');
 const feeDisplay = document.getElementById('feeDisplay');

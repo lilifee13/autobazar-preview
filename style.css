@@ -1,9 +1,9 @@
 
 body {
-  font-family: sans-serif;
+  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 2rem;
-  background: #f4f4f4;
+  background: #f0f2f5;
   color: #333;
   transition: all 0.3s ease;
 }
@@ -29,9 +29,11 @@ header h1 {
   border-radius: 8px;
   flex: 1 1 calc(33% - 2rem);
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
 }
-.tile:hover, .card:hover {
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 .card img {
   width: 100%;
