@@ -25,7 +25,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   let imageUrl = document.getElementById("image").value.trim();
   if (!imageUrl) {
-    imageUrl = "https://placehold.co/300x200?text=Part+Image";
+    imageUrl = "https://source.unsplash.com/300x200/?car,engine,garage";
   }
 
   const data = {
@@ -50,7 +50,7 @@ onValue(listingsRef, (snapshot) => {
     const card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `
-      <img src="${item.image}" alt="${item.title}" onerror="this.src='https://placehold.co/300x200?text=Image+Not+Found';" />
+      <img src="${item.image}" alt="${item.title}" onerror="this.src='https://source.unsplash.com/300x200/?broken,image';" />
       <h3>${item.title}</h3>
       <p>€${item.price} - ${item.condition}</p>
       <p>${item.location} — <small>${item.time}</small></p>
