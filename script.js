@@ -1,1 +1,1 @@
-// JavaScript placeholder for login system and user-specific listings
+// JavaScript functionality for v11.0 goes here
